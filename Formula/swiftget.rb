@@ -2,7 +2,7 @@ class Swiftget < Formula
   desc "A CLI tool to download files"
   homepage "https://github.com/tuliopc23/swiftget-cli"
   url "https://github.com/tuliopc23/swiftget-cli/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "4db037e6e63dc9e535c9dafbc5533033caf66448e0c62b53beaaa99a00457197"
+  sha256 "524f07cb51cd83329602e900eb4ebb98aebd728ef0228f81867b04dab0255b6c"
   license "MIT"
 
   depends_on :xcode
@@ -13,7 +13,8 @@ class Swiftget < Formula
   end
 
   test do
-    system "#{bin}/swiftget", "--version"
+    output = shell_output("#{bin}/swiftget --version")
+    assert_match "swiftget version 1.0.0", output
   end
 end
 
